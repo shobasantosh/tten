@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as plx
+import plotly.express as px
 
-data = pd.read_csv('vehicles_us.csv')
+data = pd.read_csv('Documents/Projects/tten/vehicles_us.csv')
 
 st.header('Welcome to my sprint 4 project!!')
 
