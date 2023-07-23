@@ -11,7 +11,7 @@ def create_bar():
     st.plotly_chart(fig)
 
 def create_hist():
-    fig2 = px.histogram(data, x='condition', title='Frequency of conditions')
+    fig2 = px.histogram(data, x='days_listed', title='Frequency by Days Listed')
     st.plotly_chart(fig2)
 
 def create_scatter():
