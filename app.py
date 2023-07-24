@@ -4,6 +4,18 @@ import plotly.express as px
 
 data = pd.read_csv('vehicles_us.csv')
 
+median_year = data.groupby('model')['model_year'].transform('median')
+data['model_year'].fillna(median_year, inplace=True)
+
+median_cylinders = data.groupby('model')['cylinders'].transform('median')
+data['cylinders'].fillna(median_cylinders, inplace=True)
+
+median_odometer = data.groupby('model_year')['odometer'].transform('median')
+data['odometer'].fillna(median_odometer, inplace=True)
+
+data["paint_color"] = df["paint_color"].fillna("unknown")
+data["is_4wd"] = data["is_4wd"].fillna(0)
+
 st.header('Welcome to my sprint 4 project!!')
 
 def create_bar():
