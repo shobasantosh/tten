@@ -13,7 +13,7 @@ data['cylinders'].fillna(median_cylinders, inplace=True)
 median_odometer = data.groupby('model_year')['odometer'].transform('median')
 data['odometer'].fillna(median_odometer, inplace=True)
 
-data["paint_color"] = df["paint_color"].fillna("unknown")
+data["paint_color"] = data["paint_color"].fillna("unknown")
 data["is_4wd"] = data["is_4wd"].fillna(0)
 
 st.header('Welcome to my sprint 4 project!!')
